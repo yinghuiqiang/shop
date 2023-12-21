@@ -11,7 +11,10 @@ http.interceptors.request.use(
   (config) => {
     // 在发送请求之前可以执行一些逻辑
     // 比如添加请求头、验证等
-    config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+    const token = localStorage.getItem('token')
+    console.log(token,"token#######################");
+    config.headers.Authorization = `Bearer ${token}`
+    // config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
     return config
   },
   (error) => {
@@ -22,6 +25,10 @@ http.interceptors.request.use(
 // 添加响应拦截器
 http.interceptors.response.use(
   (response) => {
+    // Any status code that lie within the range of 2xx cause this function to trigger
+    // Do something with response data
+    const { authorization } = response.headers
+    localStorage.setItem('token', authorization)
     if (response.data.code === 200) {
       return response?.data?.data
     } else if (response.data.code === 400) {
@@ -32,7 +39,14 @@ http.interceptors.response.use(
     // return response
   },
   (error) => {
-    return Promise.reject(error)
+    const {status} = error.response
+    if(status === 401){
+      localStorage.removeItem('token')
+      window.location.href = '#/login'
+    }
+    // Any status codes that falls outside the range of 2xx cause this function to trigger
+    // Do something with response error
+    return Promise.reject(error);
   }
 )
 

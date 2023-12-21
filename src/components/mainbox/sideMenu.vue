@@ -18,7 +18,7 @@
         </el-icon>
         <template #title>个人中心</template>
       </el-menu-item>
-      <el-sub-menu index="/user">
+      <el-sub-menu index="/user" v-if="store.state.userInfo.role == 1">
         <template #title>
           <el-icon>
             <user-filled />

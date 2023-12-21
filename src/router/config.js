@@ -1,5 +1,5 @@
 import Home from '../views/home'
-import Center from '../views/center'
+import Center from '../views/center/index'
 import AddUser from '../views/user/addUser'
 import UserList from '../views/user/userList'
 import AddBaby from '../views/baby/addBaby'

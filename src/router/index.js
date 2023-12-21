@@ -28,11 +28,11 @@ router.beforeEach((to,from,next)=>{
   if(to.path == '/login'){
     next()
   }else{
-    // if(!localStorage.getItem('token')){
-    //   next({
-    //     path:'/login'
-    //   })
-    // }else{
+    if(!localStorage.getItem('token')){
+      next({
+        path:'/login'
+      })
+    }else{
       // 这里需要判断是否是第一次，因为如果判断是否第一次会出现死循环
       // path:to.fullPath  又重新添加了路由 重新跳转了路径
       if(!store.state.isGetterRouter){
@@ -44,7 +44,7 @@ router.beforeEach((to,from,next)=>{
       }else{
         next()
       }
-    // }
+    }
   }
   // console.log(to,from,next);
 })

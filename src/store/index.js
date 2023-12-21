@@ -17,6 +17,7 @@ export default createStore({
       state.isCollapse = !state.isCollapse
     },
     getUserInfo(state,value){
+      console.log(state,value);
       state.userInfo = {
         ...state.userInfo,
         ...value

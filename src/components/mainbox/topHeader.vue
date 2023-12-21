@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-// import { Grid, UserFilled } from '@element-plus/icons'
+import { Grid, UserFilled } from '@element-plus/icons'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 

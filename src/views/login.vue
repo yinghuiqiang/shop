@@ -136,9 +136,6 @@ const options = {
     shape: {
       type: 'circle',
     },
-    // size: {
-    //   value: { min: 1, max: 5 }
-    // }
   },
   detectRetina: true,
 }
@@ -174,24 +171,20 @@ const ruleForm = reactive({
 const router = useRouter()
 
 const submitForm = () => {
-  ruleFormRef.value.validate((valid) => {
+  ruleFormRef.value.validate(async (valid) => {
     if (valid) {
-      // localStorage.setItem('token','123')
-      console.log(loginForm)
       userLogin(loginForm).then(
         (response) => {
-          console.log(response)
-          if (response.length > 0) {
-            store.commit('getUserInfo', response[0])
+          if (response?.username) {
+            store.commit('getUserInfo', response)
             store.commit('changeRouterGetterState', false)
             router.push('/home')
           }
         },
         (error) => {
-          console.log(error)
+          console.error(JSON.stringify(error));
         }
       )
-      // router.push('/home')
     } else {
       console.log('error submit!!')
       return false
