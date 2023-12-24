@@ -1,5 +1,6 @@
 import instance from './request'
 
+// user start
 export const getUserList = (data) =>
   instance({
     url: '/get-user-list',
@@ -49,4 +50,60 @@ export const findUserById = (data) =>
     url: '/find-user-byid',
     method: 'post',
     data,
+  })
+
+// class start
+export const getCourseList = () =>
+  instance({
+    url: '/get-course-list',
+    method: 'post',
+  })
+export const addCourse = (data) =>
+  instance({
+    url: '/add-course',
+    method: 'post',
+    data,
+    headers: {
+      // 提交的是一个表单文件
+      'Content-Type': 'multipart/form-data',
+    },
+  })
+export const deleteCourseById = (data) =>
+  instance({
+    url: '/delete-course-byid',
+    method: 'post',
+    data,
+  })
+export const changeCourseById = (data) =>
+  instance({
+    url: '/change-course-byid',
+    method: 'post',
+    data,
+    headers: {
+      // 提交的是一个表单文件
+      'Content-Type': 'multipart/form-data',
+    },
+  })
+export const findCourseById = (data) =>
+  instance({
+    url: '/find-course-byid',
+    method: 'post',
+    data,
+  })
+
+// teacher start
+export const addTeacher = (data) =>
+  instance({
+    url: '/add-teacher',
+    method: 'post',
+    data,
+    headers: {
+      // 提交的是一个表单文件
+      'Content-Type': 'multipart/form-data',
+    },
+  })
+  export const getTeacherList = () =>
+  instance({
+    url: '/get-teacher-list',
+    method: 'post',
   })

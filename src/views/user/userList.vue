@@ -7,7 +7,7 @@
       </el-breadcrumb-item>
     </el-breadcrumb>
 
-    <el-table :data="tableData" style="width: 100%">
+    <el-table :data="tableData" style="width: 100%" stripe>
       <el-table-column label="用户名" prop="username"></el-table-column>
       <el-table-column label="头像">
         <template #default="scope">

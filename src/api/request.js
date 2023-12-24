@@ -12,7 +12,6 @@ http.interceptors.request.use(
     // 在发送请求之前可以执行一些逻辑
     // 比如添加请求头、验证等
     const token = localStorage.getItem('token')
-    console.log(token,"token#######################");
     config.headers.Authorization = `Bearer ${token}`
     // config.headers['Content-Type'] = 'application/x-www-form-urlencoded'
     return config
