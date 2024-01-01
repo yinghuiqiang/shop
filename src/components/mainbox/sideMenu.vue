@@ -37,7 +37,8 @@
         </template>
         <el-menu-item-group>
           <el-menu-item index="/addBaby">添加幼儿</el-menu-item>
-          <el-menu-item index="/babyList">幼儿管理</el-menu-item>
+          <el-menu-item index="/babyList">幼儿列表</el-menu-item>
+          <el-menu-item index="/babyManage">幼儿管理</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
       <el-sub-menu index="/class">
@@ -48,7 +49,8 @@
         </template>
         <el-menu-item-group>
           <el-menu-item index="/addClass">添加课程</el-menu-item>
-          <el-menu-item index="/classList">课程管理</el-menu-item>
+          <el-menu-item index="/classList">课程列表</el-menu-item>
+          <el-menu-item index="/classManage">课程管理</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
       <el-sub-menu index="/teacher">
@@ -58,7 +60,8 @@
         </template>
         <el-menu-item-group>
           <el-menu-item index="/addTeacher">添加教师</el-menu-item>
-          <el-menu-item index="/teacherList">教师管理</el-menu-item>
+          <el-menu-item index="/teacherList">教师列表</el-menu-item>
+          <el-menu-item index="/teacherManage">教师管理</el-menu-item>
         </el-menu-item-group>
       </el-sub-menu>
     </el-menu>
@@ -80,30 +83,6 @@ import {
 } from "@element-plus/icons";
 
 const store = useStore()
-
-// const vNew = {
-//   mounted(el) {
-//     // console.log('指令获取到的DOM',el)
-//     if (store.state.userInfo.role == 2 || store.state.userInfo.role == 1) return
-//     el.parentNode.removeChild(el)
-//   },
-// }
-
-// const vProduct = {
-//   mounted(el) {
-//     // console.log('指令获取到的DOM',el)
-//     if (store.state.userInfo.role == 3 || store.state.userInfo.role == 1) return
-//     el.parentNode.removeChild(el)
-//   },
-// }
-// const vAdmin = {
-//   mounted(el) {
-//     // console.log('指令获取到的DOM',el)
-//     console.log(store.state.userInfo.role)
-//     if (store.state.userInfo.role == 4 || store.state.userInfo.role == 1) return
-//     el.parentNode.removeChild(el)
-//   },
-// }
 const route = useRoute()
 </script>
 

@@ -102,8 +102,58 @@ export const addTeacher = (data) =>
       'Content-Type': 'multipart/form-data',
     },
   })
-  export const getTeacherList = () =>
+export const getTeacherList = () =>
   instance({
     url: '/get-teacher-list',
     method: 'post',
   })
+export const changeTeacherById = (data) =>
+  instance({
+    url: '/change-teacher-byid',
+    method: 'post',
+    data,
+    headers: {
+      // 提交的是一个表单文件
+      'Content-Type': 'multipart/form-data',
+    },
+  })
+export const findTeacherById = (data) =>
+  instance({
+    url: '/find-teacher-byid',
+    method: 'post',
+    data,
+  })
+
+
+// baby start
+export const addBaby = (data) =>
+  instance({
+    url: '/add-baby',
+    method: 'post',
+    data,
+    headers: {
+      // 提交的是一个表单文件
+      'Content-Type': 'multipart/form-data',
+    },
+  })
+export const getBabyList = () =>
+  instance({
+    url: '/get-baby-list',
+    method: 'post',
+  })
+// export const changeTeacherById = (data) =>
+//   instance({
+//     url: '/change-teacher-byid',
+//     method: 'post',
+//     data,
+//     headers: {
+//       // 提交的是一个表单文件
+//       'Content-Type': 'multipart/form-data',
+//     },
+//   })
+// export const findTeacherById = (data) =>
+//   instance({
+//     url: '/find-teacher-byid',
+//     method: 'post',
+//     data,
+//   })
