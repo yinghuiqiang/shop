@@ -152,21 +152,21 @@ const submitForm = () => {
     if (valid) {
       console.log(addBabyForm);
       const result = await addBaby(addBabyForm)
-      // if ((result.message = 'success')) {
-      //   ElMessage.success({
-      //     message: '添加幼儿成功',
-      //     type: 'success',
-      //   })
-      //   addBabyForm.babyName = ''
-      //   addBabyForm.age = 20
-      //   addBabyForm.gender = 1
-      //   addBabyForm.introduction = ''
-      //   addBabyForm.patriarchPhone = ''
-      //   addBabyForm.partiarchName = ''
-      //   addBabyForm.classCode = []
-      //   addBabyForm.avatar = ''
-      //   addBabyForm.file = null
-      // }
+      if ((result.message = 'success')) {
+        ElMessage.success({
+          message: '添加幼儿成功',
+          type: 'success',
+        })
+        addBabyForm.babyName = ''
+        addBabyForm.age = 20
+        addBabyForm.gender = 1
+        addBabyForm.introduction = ''
+        addBabyForm.patriarchPhone = ''
+        addBabyForm.partiarchName = ''
+        addBabyForm.classCode = []
+        addBabyForm.avatar = ''
+        addBabyForm.file = null
+      }
     }
   })
 }
@@ -182,7 +182,7 @@ const optionsGender = [
   },
 ]
 const optionsAge = []
-for (let i = 20; i <= 45; i++) {
+for (let i = 0; i <= 15; i++) {
   optionsAge.push(i)
 }
 const uploadHandler = (file) => {

@@ -3,7 +3,7 @@
     <el-breadcrumb separator="/">
       <el-breadcrumb-item>幼儿早期教育管理系统</el-breadcrumb-item>
       <el-breadcrumb-item :to="{ path: '/' }">
-        <span class="breadcrumbTitle">教师列表</span>
+        <span class="breadcrumbTitle">幼儿列表</span>
       </el-breadcrumb-item>
     </el-breadcrumb>
     <div class="teacherList">
